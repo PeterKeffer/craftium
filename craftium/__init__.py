@@ -357,3 +357,34 @@ register(
         _voxel_obs_available=True,
     )
 )
+
+register(
+    id="Craftium/FlatNav-v0",
+    entry_point="craftium.craftium_env:CraftiumEnv",
+    additional_wrappers=[
+        WrapperSpec(
+            name="DiscreteActionWrapper",
+            entry_point="craftium.wrappers:DiscreteActionWrapper",
+            kwargs=dict(
+                actions=["forward", "mouse x+", "mouse x-"],
+                mouse_mov=0.5,
+            ),
+        )
+    ],
+    # kwargs
+    kwargs=dict(
+        env_dir=os.path.join(root_path, "craftium-envs/flat-nav"),
+        obs_width=64,
+        obs_height=64,
+        max_timesteps=1000,
+        init_frames=200,
+        soft_reset=True,
+        _minetest_conf=dict(
+            mg_name="flat",
+            # no natural decorations (the mod plants its own vegetation) and
+            # no caves/dungeons, so the flat surface is never broken
+            mg_flags="light,biomes,nodecorations,nocaves,nodungeons",
+            time_speed=0,
+        ),
+    )
+)
