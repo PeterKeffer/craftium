@@ -17,7 +17,7 @@ local function rand(lower, greater)
 	return lower + math.random() * (greater - lower)
 end
 
-local GROUND_Y = 8          -- surface level of the `flat` mapgen
+local GROUND_Y = 4          -- top dirt_with_grass layer built by the superflat mod
 local ARENA_RADIUS = 40     -- vegetation is planted inside this radius
 local TARGET_MIN_DIST = 20  -- distance range of the target tower
 local TARGET_MAX_DIST = 32

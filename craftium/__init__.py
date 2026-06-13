@@ -380,10 +380,9 @@ register(
         init_frames=200,
         soft_reset=True,
         _minetest_conf=dict(
-            mg_name="flat",
-            # no natural decorations (the mod plants its own vegetation) and
-            # no caves/dungeons, so the flat surface is never broken
-            mg_flags="light,biomes,nodecorations,nocaves,nodungeons",
+            # the superflat mod builds the world (singlenode mapgen) with a
+            # dirt_with_grass surface, so no path ever requires jumping
+            mg_name="singlenode",
             time_speed=0,
         ),
     )

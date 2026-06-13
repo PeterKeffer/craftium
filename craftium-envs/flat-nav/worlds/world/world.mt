@@ -7,4 +7,5 @@ backend = sqlite3
 gameid = minetest
 world_name = world
 server_announce = false
+load_mod_superflat = mods/superflat
 load_mod_craftium_flat_nav = mods/craftium_env
